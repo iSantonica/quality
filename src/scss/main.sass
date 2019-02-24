@@ -1,99 +1,766 @@
 @import "variables"
 @import "functions"
 @import "layout/normalize"
+@import "components"
 
-/*Common*/
+/*header*/
 
-*
-	margin: 0
-	padding: 0
+.header
+  border-bottom: 1px solid #c8d0e2
+  height: 110px
+  position: fixed
+  left: 0
+  right: 0
+  top: 0
+  z-index: 100
+  background-color: #fff
+  .container
+    height: 100%
+.header-inner
+  height: 100%
+  display: flex
+  justify-content: space-between
+  align-items: center
 
-	outline: 0
-	box-sizing: inherit
+.main-menu
+  list-style: none
+  display: flex
+  li
+    margin: 0 17px
+    a
+      color: #23272c
+      font-size: 16px
+      font-weight: 500
+      line-height: 26px
+      &:hover
+        color: $color-base
+        position: relative
+        &::after
+          content: ''
+          position: absolute
+          bottom: -45px
+          left: 0
+          right: 0
+          height: 1px
+          background-color: $color-base
+    &.current-menu-item
+      a
+        color: $color-base
+        position: relative
+        &::after
+          content: ''
+          position: absolute
+          bottom: -45px
+          left: 0
+          right: 0
+          height: 1px
+          background-color: $color-base
 
-	&:before,
-	&:after
-		box-sizing: inherit
+.lang-box
+  a
+    text-transform: uppercase
+    font-size: 12px
+    font-weight: 400
+    line-height: 26px
+    color: #cfcfcf
+    margin: 0 4px
+    &.active
+      color: #23272c
+    &:hover
+      color: #23272c
+
+.phone
+  padding-left: 28px
+  background: url(../images/phone.svg) no-repeat top left
+  a
+    color: #23272c
+    font-size: 18px
+    font-weight: 500
+    line-height: 1em
     
+/*main-banner*/
 
+#main-banner
+  height: 100vh
+  min-height: 600px
+  padding-top: 110px
+  position: relative
+  .container
+    height: 100%
+  
+.main-banner-content
+  position: absolute
+  left: 0
+  right: 0
+  top: 110px
+  bottom: 0
+  background: url(../images/dots.png) no-repeat left 65px
+  
+.banner-back
+  width: 100%
+  display: flex
+  justify-content: flex-end
+  height: 100%
+  
+.banner-back-img
+  width: 44%
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: left top
 
-html
-	-webkit-tap-highlight-color: transparent
-	font-family: sans-serif
-	font-size: 16px
+.main-banner-inner
+  width: 50%
+  height: 100%
+  padding-top: 20vh
+  
+.slider-arr
+  width: 38px
+  height: 15px
+  cursor: pointer
+  &:hover
+    svg
+      path
+        fill: #008ddc
+  
+.slider-arrows
+  display: flex
+  align-items: center
 
+.slider-count
+  margin: 0 10px
+  color: $color-base
+  font-size: 24px
+  font-weight: 700
+  line-height: 19px
+  
+.main-banner-slider__slide
+  h1
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      bottom: -20px
+      left: 0
+      width: 164px
+      height: 1px
+      background-color: $color-base
+  
+    
+.main-banner-slider-wrap
+  .btn
+    margin-top: 80px
+    
+.common-section
+  padding-top: 75px
+  
+.why-we__text-block
+  padding-bottom: 40px
+  color: #ffffff
+  width: 50%
+  
+#why-we
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: cover
+  padding-bottom: 90px
+  
+.why-we-slider
+  display: flex
 
-body, html
-	box-sizing: border-box
-	-webkit-font-smoothing: antialiased
-	-moz-osx-font-smoothing: grayscale
-	min-width: 320px
+.why-we-slide
+  width: calc(100% / 3)
+  color: #ffffff
+  
+.big-number
+  font-size: 90px
+  font-weight: 700
+  line-height: 100px
+ 
+.why-we-slide-top
+  position: relative
+  border-bottom: 1px solid #fff
+  margin-bottom: 20px
+  height: 145px
+  &::after
+    content: ''
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 15px
+    height: 15px
+    background-color: #ffffff
+    border-radius: 50%
+    transform: translateY(50%)
 
+.slide-img
+  display: flex
+  margin-bottom: 20px
+  padding-top: 20px
+  img
+    margin-right: 30px
 
-img 
-	max-width: 100% 
-	height: auto
+.why-we-slide-bottom
+  padding-right: 100px
+  
+.industries-wrap
+  display: flex
+  justify-content: space-between
+  margin-top: 50px
+  
+.industries-item
+  width: 32%
+  min-height: 250px
+  padding: 27px
+  position: relative
+  box-shadow: 2px 18px 26px -11px rgba(0,0,0,0.27)
+  &:hover
+    .industries-item__overlay
+      display: none
+  
+.industries-item__icon
+  margin-bottom: 10px
+  
+.industries-item__menu
+  list-style: none
+  li
+    margin-bottom: 0
+    a
+      color: #a5bcfb
+      font-family: "Segoe UI"
+      font-size: 16px
+      font-weight: 400
+      line-height: 31px
+      &:hover
+        color: #ffffff
+        position: relative
+        &::before
+          content: url(../images/right-arrow.svg)
+          transition: 0.3s
+          margin-right: 10px
+ 
+.industries-item__overlay
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  background-color: inherit
+  color: #fff
+  text-align: center
+  padding: 27px
 
-body
-	-ms-overflow-style: scrollbar
+.projects-slide__caption
+  display: flex
+  align-items: center
+  padding-right: 140px
+  img
+    margin-right: 10px
+      
+.projects-slider-wrap
+  margin-top: 50px
+  position: relative
+  .slider-arrows
+    position: absolute
+    right: 0
+    top: 10px
+    z-index: 10
+    background-color: #fff
+    
+.projects-slide__caption
+  margin-bottom: 30px
+  
+.projects-slide__inner
+  display: flex
 
+.projects-slide__left
+  width: 50%
+  background-color: #ececec
+  padding: 40px 30px
+  
+.projects-slide__right
+  width: 50%
+  background-color: #e0e5e8
+  padding: 40px 30px
+  .btn
+    margin-top: 60px
+  
+.projects-slide__title
+  display: flex
+  margin-bottom: 40px
+  img
+    margin-right: 10px
+  h4
+    font-size: 16px
+    
+.news-wrap
+  display: flex
+  justify-content: space-between
+  margin-top: 50px
+  
+.news-item
+  width: 24%
+  display: block
+  img
+    margin-bottom: 25px
+    
+.news-date
+  color: #676767
+  font-size: 13px
+  font-weight: 300
+  line-height: 26px
+  
+.news-excerption
+  color: #000000
+  font-size: 14px
+  font-weight: 300
+  line-height: 26px
+  
+#news
+  padding-bottom: 90px
+  
+#partners
+  background-color: #efefef
+  padding: 50px 0
+  overflow: hidden
+  
+.partners-wrap
+  display: flex
+  justify-content: center
+  align-items: center
+  img
+    margin: 0 35px
+  
+.footer
+  background-color: $color-text
+  
+.footer-inner
+  display: flex
+  justify-content: space-between
+  align-items: center
+  height: 90px
+  .btn
+    white-space: nowrap
+    width: 205px
+    height: 40px
 
-button 
-	-webkit-appearance: none
-	-moz-appearance: none
-	appearance: none
-	border: 0
-	background-color: transparent
-	cursor: pointer
+.copy
+  color: #ffffff
+  font-size: 13px
+  font-weight: 300
+  line-height: 26px
+  
+.footer-addr
+  color: #ffffff
+  font-size: 13px
+  font-weight: 300
+  line-height: 26px
+  padding-left: 20px
+  background: url(../images/addr.svg) no-repeat left center
+  
+.footer-tel
+  background: url(../images/tel.svg) no-repeat left center
+  color: #ffffff
+  font-size: 13px
+  font-weight: 300
+  line-height: 26px
+  padding-left: 20px
+  
+.socials
+  display: flex
+  a
+    margin: 0 5px
+    width: 22px
+    height: 20px
+ 
+.fb
+  background: url(../images/fb.svg) no-repeat center center
+  
+.in
+  background: url(../images/in.svg) no-repeat center center
+  
+.tg
+  background: url(../images/telegram.svg) no-repeat center center
+  
+#head-banner
+  background: url(../images/hb.png) no-repeat center center / cover
+  padding-top: 110px
+  .why-we-slider
+    padding-top: 20px
+    .big-number
+      font-size: 44px
+      line-height: 49px
+    h3
+      font-size: 12px
+    .why-we-slide-top
+      height: 90px
+    .slide-img
+      padding-top: 10px
+      margin-bottom: 10px
+      img
+        max-height: 30px
+        
+.all-services-wrap
+  display: flex
+  flex-wrap: wrap
+  margin-left: -15px
+  margin-right: -15px
+  
+.all-services-item
+  width: calc((100% - 90px)/3)
+  background-color: #f3f3f3
+  min-height: 253px
+  padding: 60px 40px
+  border-bottom: 2px solid rgba(8, 35, 68, 0.23)
+  transition: 0.3s
+  margin-bottom: 30px
+  margin-left: 15px
+  margin-right: 15px
+  p
+    color: #000000
+    font-size: 14px
+    font-weight: 300
+    line-height: 26px
+    transition: 0.3s
+  &:hover
+    background-color: $color-base
+    p, .all-services-link
+      color: #fff
+  
+.all-services-link
+  color: $color-base
+  font-size: 18px
+  font-weight: 500
+  line-height: 30px
+  text-transform: uppercase
+  text-decoration: underline
+  margin-bottom: 15px
+  display: block
+  transition: 0.3s
+  
+.all-services-text
+  margin-bottom: 50px
+  p
+    color: #000000
+    font-size: 14px
+    font-weight: 300
+    line-height: 26px
+    
+.icons-block
+  display: flex
+  flex-wrap: wrap
+  margin-bottom: 50px
+  .item
+    width: calc(100% /4)
+    padding-right: 50px
+    margin-bottom: 30px
+    .icon
+      margin-bottom: 20px
+      height: 50px
+      display: flex
+      align-items: flex-end
+    &> img
+      margin-bottom: 20px
+  p, a
+    color: #000000
+    font-size: 14px
+    font-weight: 300
+    line-height: 26px
+    display: block
+    margin-bottom: 0
+    
+.big-icons-block
+  display: flex
+  padding: 55px
+  align-items: center
+  background-color: #f2f2f2
+  margin-bottom: 50px
+  p
+    color: #000000
+    font-size: 14px
+    font-weight: 300
+    line-height: 26px
+    margin-bottom: 0
+  img
+    margin-right: 55px
+    
+.common-text
+  margin-bottom: 50px
+  margin-top: 40px
+  p
+    color: #000000
+    font-size: 14px
+    font-weight: 300
+    line-height: 26px
+  a
+    color: $color-base
+    font-size: 14px
+    font-weight: 300
+    line-height: 26px
+  h4
+    margin-top: 20px
+  
+#contacts
+  h4
+    margin-bottom: 30px
+    
+.map
+  height: 645px
+  iframe
+    width: 100%
+    height: 100%
+    
+#map-section
+  padding-top: 30px
+  
+.jobs
+  list-style: none
+  column-count: 2
+  column-gap: 30px
+  li
+    display: inline-block
+    width: 100%
+.jobs-inner
+  display: none
+  
+.jobs-title
+  color: #242424
+  font-size: 16px
+  font-weight: 400
+  line-height: 26px
+  padding-right: 40px
+  position: relative
+  cursor: pointer
+  padding-top: 10px
+  padding-bottom: 10px
+  border-bottom: 1px solid rgba(112, 112, 112, 0.2)
+  &::after
+    content: '+'
+    position: absolute
+    right: 0
+    top: 50%
+    transform: translateY(-50%)
+    color: $color-base
+    font-size: 22px
+    font-weight: 300
+.jobs-inner
+  padding-bottom: 10px
+  padding-top: 10px
+  font-size: 14px
+  
+.form-wrap
+  padding: 33px
+  background-color: #f2f2f2
+  width: 531px
+  
+.form-row
+  display: flex
+  justify-content: space-between
+  margin-bottom: 10px
+  align-items: center
+  p
+    margin-bottom: 0
+  
+.form-col
+  width: 48%
+  
+.f-input
+  height: 42px
+  border: 1px solid #e9e9e9
+  background-color: #ffffff
+  color: #818181
+  font-size: 12px
+  font-weight: 400
+  line-height: 26px
+  width: 100%
+  padding-left: 20px
+  padding-right: 20px
+  &:focus
+    border: 1px solid $color-base
+    
+.f-area
+  height: 105px
+  padding-top: 15px
+  padding-bottom: 15px
+  margin-bottom: 20px
+  
+.f-submit
+  width: 141px
+  height: 51px
+  text-align: center
+  border: none
+  cursor: pointer
 
+.l-file
+  width: 120px
+  height: 30px
+  background-color: $color-text
+  color: #ffffff
+  font-size: 12px
+  font-weight: 400
+  line-height: 26px
+  border: none
+  text-align: center
+  display: flex
+  align-items: center
+  justify-content: center
+  cursor: pointer
+  
+.f-file
+  width: 0.1px
+  height: 0.1px
+  opacity: 0
+  overflow: hidden
+  position: absolute
+  z-index: -1
+  
+.project-item
+  display: flex
+  align-items: center
+  margin-bottom: 30px
+  a
+    color: $color-text
+  p
+    margin-bottom: 0
+    color: #000000
+    font-size: 14px
+    font-weight: 300
+    line-height: 26px
+  h4
+    color: $color-text
+    font-size: 16px
+    font-weight: 700
+    line-height: 26px
+    margin-bottom: 10px
+    
+.project-date
+  color: #828282
+  font-size: 12px
+  font-weight: 300
+  line-height: 26px
+  
+.project-img
+  width: 251px
+  height: 84px
+  border: 1px solid #dedede
+  display: flex
+  justify-content: center
+  align-items: center
+  margin-right: 30px
+  
+.projects-wrap
+  margin-top: 50px
+  
+.pagination
+  ul
+    list-style: none
+    display: flex
+    li
+      width: 40px
+      height: 40px
+      display: flex
+      align-items: center
+      justify-content: center
+      border: 1px solid #dfdfdf
+      margin-right: 10px
+      a
+        color: #000000
+        font-size: 16px
+        font-weight: 400
+        line-height: 26px
+      &.active
+        background-color: $color-base
+        color: #fff
+        
+.pagination
+  margin-top: 50px
+  
+.serv-inner
+  display: flex
+  justify-content: space-between
+  align-items: flex-start
+  
+.serv-inner-text
+  width: 64%
+  ul
+    list-style-image: url(../images/arr.png)
+    padding-left: 20px
+    
+.serv-menu
+  width: 34%
+  background-color: $color-base
+  
+.servises-menu
+  list-style: none
+  padding-left: 0
+  >li
+    border-bottom: 1px solid #29a2e6
+    margin-bottom: 0
+    .menu-caption
+      width: 100%
+      padding: 15px 30px
+      transition: 0.3s
+      position: relative
+      &::after
+        content: '+'
+        color: #fff
+        position: absolute
+        right: 20px
+        top: 50%
+        transform: translateY(-50%)
+        font-size: 18px
+        font-weight: 500
+      >a
+        color: #ffffff
+        font-size: 14px
+        font-weight: 500
+        letter-spacing: 0.28px
+        line-height: 1em
+    ul
+      list-style: none
+      padding-bottom: 10px
+      display: none
+      li
+        margin-bottom: 0
+        padding: 10px 30px
+        a
+          color: #ffffff
+          font-size: 12px
+          font-weight: 400
+          letter-spacing: 0.24px
+          line-height: 1em
+          position: relative
+          &:hover
+            color: #92d8ff
+            &::before
+              content: url(../images/right-arrow.svg)
+              transition: 0.3s
+              margin-right: 10px
+    &.active
+      .menu-caption
+        background-color: #004f9f
+        &::after
+          content: '-'
+      ul
+        background-color: rgba(0, 79, 159, 0.4)
 
-textarea
-	resize: none
+.modal
+  color: #fff
+  background-color: transparent
+  padding: 40px
+  h2
+    text-align: center
+    color: $color-text
 
-
-a, a:active, a:focus,
-button, input, button:hover, button:active, button:focus,
-input:focus, input:active, textarea
-	text-decoration: none
-	outline: none
-
-body
-	font-size: 1rem
-	font-family: 'HelveticaNeueCyr'
-	font-weight: 500
-	font-style: normal
-	position: relative
-	width: 100%
-	height: 100%
-
-h2
-	font-size: toRem(48px)
-	font-weight: 300
-	margin-bottom: 20px
-
-h3
-	font-size: toRem(36px)
-	font-weight: 300
-	margin-bottom: 25px
-	line-height: toEm(36px, 50px)
-
-
-p, li
-	font-size: toRem(18px)
-	line-height: toEm(18px, 34px)
-	font-weight: 300
-
-a[href^='tel']
-	white-space: nowrap
-
-.clearfix::after
-  content: ""
-  display: table
-  clear: both
-
-
-.container
-	max-width: 1170px
-	padding: 0 15px
-	margin: 0 auto
-
+.form-row-fe
+  justify-content: flex-end
+  
+.menu-btn, .close-menu
+  display: none
+  
+.slider-arrows_why
+  display: none
+  

@@ -1,108 +1,50 @@
 (function($) {
 "use strict";
 
-// // Internet Explorer 10 in Windows Phone 8 viewport bug
-// if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-// 		var msViewportStyle = document.createElement('style');
-// 		msViewportStyle.appendChild(
-// 				document.createTextNode(
-// 						'@-ms-viewport{width:auto!important}'
-// 				)
-// 		);
-// 		document.head.appendChild(msViewportStyle);
-// }
-//
-// // Check if element is in viewport
-// $.fn.isInViewport = function() {
-// 		var elementTop    = $(this).offset().top;
-// 		var elementBottom = elementTop + $(this).outerHeight();
-//
-// 		var viewportTop    = $(window).scrollTop();
-// 		var viewportBottom = viewportTop + $(window).height();
-//
-// 		return elementBottom > viewportTop && elementTop < viewportBottom;
-// };
-//
-// // Set max-height on the elements in a row
-// function equalHeight(container) {
-//
-// 		var currentTallest = 0,
-// 				currentRowStart = 0,
-// 				rowDivs = [],
-// 				$el,
-// 				topPosition = 0;
-//
-// 		$(container).each(function(i) {
-//
-// 				$el = $(this);
-// 				$el.height('auto');
-// 				topPosition = $el.offset().top;
-//
-// 				if (currentRowStart != topPosition) {
-// 						for (currentDiv = 0; currentDiv < rowDivs.length; currentDiv++) {
-// 								rowDivs[currentDiv].height(currentTallest);
-// 						}
-// 						rowDivs.length = 0; // empty the array
-// 						currentRowStart = topPosition;
-// 						currentTallest = $el.height();
-// 						rowDivs.push($el);
-// 				} else {
-// 						rowDivs.push($el);
-// 						currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
-// 				}
-// 				for (var currentDiv = 0; currentDiv < rowDivs.length; currentDiv++) {
-// 						rowDivs[currentDiv].height(currentTallest);
-// 				}
-// 		});
-// }
-//
-// // From https://davidwalsh.name/javascript-debounce-function.
-// function debounce(func, wait, immediate) {
-// var timeout;
-// return function() {
-// 	var context = this, args = arguments;
-// 	var later = function() {
-// 		timeout = null;
-// 		if (!immediate) func.apply(context, args);
-// 	};
-// 	var callNow = immediate && !timeout;
-// 	clearTimeout(timeout);
-// 	timeout = setTimeout(later, wait);
-// 	if (callNow) func.apply(context, args);
-// };
-// };
-
 $(document).ready(function () {
 
-   $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-            $('.header').addClass('fixed-header');
-        } else {
-            $('.header').removeClass('fixed-header');
-        }
-    });
+   // $(window).scroll(function () {
+   //      if ($(this).scrollTop() > 100) {
+   //          $('.header').addClass('fixed-header');
+   //      } else {
+   //          $('.header').removeClass('fixed-header');
+   //      }
+   //  });
 
-  $('.main-slider').slick({
+  $('.main-banner-slider').slick({
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: false,
-    prevArrow: '.main-slider-prev',
-    nextArrow: '.main-slider-next'
+    prevArrow: '.slider-arr-left1',
+    nextArrow: '.slider-arr-right1'
   });
-
-  $('.review-slider').slick({
+  
+  $('.projects-slider').slick({
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    dots: true,
-    arrows: false,
+    dots: false,
+    prevArrow: '.slider-arr-left2',
+    nextArrow: '.slider-arr-right2'
+  });
+  
+  $('.jobs-title').on('click', function () {
+    $(this).siblings('.jobs-inner').slideToggle();
+  });
+  
+  $('.menu-caption').on('click', function () {
+    $(this).siblings('ul').slideToggle();
+    $(this).closest('li').toggleClass('active');
+  });
+  
+  $('ul.tabs__caption').on('click', 'li:not(.active)', function() {
+    $(this)
+      .addClass('active').siblings().removeClass('active')
+      .closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
   });
 
-  $('.mnu-btn').click(function(){;
-    $('.header').toggleClass('with-menu');
-    $('.main-menu-wrap').slideToggle();
-  });
+  
 
    $('a[href^="#"], *[data-href^="#"]').on('click', function(e){
             e.preventDefault();
@@ -112,13 +54,37 @@ $(document).ready(function () {
         });
 
 
-  if(window.matchMedia("(max-width: 1024px)").matches){
-
+  if(window.matchMedia("(max-width: 767px)").matches){
+    $('.menu-btn').click(function(){;
+      $('.main-menu-wrap').slideToggle();
+      $(this).toggleClass('act');
+    });
+  
+    $('.why-we-slider').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: false,
+      prevArrow: '.slider-arr-left3',
+      nextArrow: '.slider-arr-right3'
+    });
   } 
 
   if(window.matchMedia("(max-width: 1024px)").matches){
-    $(".main-menu-wrap").append($(".header-contacts"));
+    $('.menu-btn').click(function(){;
+      $('.main-menu-wrap').addClass('active');
+    });
+  
+    $('.close-menu').click(function(){;
+      $('.main-menu-wrap').removeClass('active');
+    });
   }
+  
+  $( window ).resize(function() {
+  
+  
+  
+  }); //end resize
 
 
 

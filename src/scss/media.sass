@@ -3,5 +3,467 @@
 
 @media screen and (max-width: 1366px)
 	html
-		font-size: 15px
+		font-size: 14px
 
+	.header
+		height: 85px
+		
+	.logo
+		max-width: 125px
+		
+	#main-banner
+		padding-top: 85px
+	
+	.main-menu
+		li
+			a
+				&:hover
+					&::after
+						bottom: -33px
+			&.current-menu-item
+				a
+					&::after
+						bottom: -33px
+						
+@media screen and (max-width: 1024px)
+	.container
+		max-width: 798px
+		
+	.main-menu-wrap
+		display: none
+		position: absolute
+		left: 0
+		right: 0
+		top: 0
+		bottom: 0
+		background-color: #fff
+		&.active
+			display: flex
+			justify-content: space-between
+			align-items: center
+			padding-right: 15px
+		
+	.menu-btn
+		width: 27px
+		height: 19px
+		background-image: url(../images/menu.svg)
+		display: block
+		
+	.close-menu
+		width: 19px
+		height: 19px
+		display: block
+		background-image: url(../images/cancel.svg)
+		
+	.main-menu
+		li
+			a
+				&:hover
+					&::after
+						display: none
+			&.current-menu-item
+				a
+					&::after
+						display: none
+						
+	#main-banner
+		height: 445px
+	
+	.banner-back-img
+		width: 55%
+		
+	.main-banner-inner
+		width: 44%
+		padding-right: 30px
+		padding-top: 30px
+		
+	.main-banner-content
+		top: 85px
+		
+	.main-banner-slider-wrap
+		.btn
+			margin-top: 40px
+			
+	.why-we__text-block
+		width: 80%
+		
+	#why-we
+		padding-bottom: 50px
+		
+	.why-we-slide-bottom
+		padding-right: 40px
+		
+	.big-number
+		font-size: 58px
+		font-weight: 700
+		line-height: 65px
+		
+	.why-we-slide-top
+		height: 100px
+		h3
+			font-size: 15px
+		&::after
+			width: 10px
+			height: 10px
+			
+	.slide-img
+		padding-top: 10px
+		margin-bottom: 15px
+		img
+			max-height: 40px
+			
+	//.industries-item
+	//	width: 100%
+	
+	.industries-item__menu
+		li
+			a
+				font-size: 14px
+		
+	.industries-wrap
+		flex-wrap: wrap
+		
+	//.industries-item__overlay
+	//	display: none
+	
+	.common-section
+		padding-top: 50px
+		
+	.news-wrap
+		.news-item
+			width: 31.5%
+			&:nth-child(n+4)
+				display: none
+			
+	#news
+		padding-bottom: 50px
+		
+	.partners-wrap
+		justify-content: space-between
+		img
+			&:nth-child(n+5)
+				display: none
+			
+	.footer-addr
+		display: none
+		
+	#head-banner
+		padding-top: 85px
+		.why-we-slider
+			.why-we-slide-bottom
+				display: none
+				
+	.all-services-item
+		width: calc((100% - 60px)/ 2)
+		
+	.icons-block
+		.item
+			width: calc(100% / 2)
+			
+	.all-services-text
+		margin-bottom: 30px
+		
+	#contacts
+		.icons-block
+			margin-bottom: 0
+			.item
+				width: calc(100% / 3)
+				
+	.icons-block
+		margin-bottom: 0
+		
+	.jobs
+		column-count: 1
+		
+	.form-wrap
+		width: 100%
+		
+	.tabs__caption
+		li
+			&:not(:last-child)
+				margin-right: 8px
+	
+	.common-text
+		margin-bottom: 30px
+		margin-top: 20px
+		
+	.serv-inner
+		flex-wrap: wrap
+		
+	.serv-inner-text
+		width: 100%
+		
+	.serv-menu
+		width: 100%
+		order: -1
+		margin-bottom: 30px
+		
+@media screen and (max-width: 767px)
+	.phone
+		display: none
+		
+	.lang-box
+		order: -1
+		
+	.main-menu-wrap
+		top: 100%
+		bottom: auto
+		background-color: #f5f5f5
+		height: 100vh
+		padding-right: 0
+		padding-top: 20vh
+		ul
+			flex-direction: column
+			justify-content: center
+			align-items: center
+		
+		
+	.close-menu
+		display: none
+		
+	.act
+		background: url(../images/cancel.svg) no-repeat
+		
+	.banner-back
+		display: none
+		
+	.main-banner-inner
+		width: 100%
+		padding-right: 0
+		
+	.main-banner-slider-wrap
+		position: relative
+		.btn
+			margin-top: 60px
+			margin-left: auto
+			margin-right: auto
+		.slider-arrows
+			position: absolute
+			bottom: 80px
+			left: 50%
+			transform: translateX(-50%)
+		h1
+			text-align: center
+			&::after
+				left: 50%
+				transform: translateX(-50%)
+		p
+			text-align: center
+		
+	#main-banner
+		min-height: 460px
+		height: auto
+		
+	.main-banner-content
+		position: static
+		padding-top: 0
+		padding-bottom: 60px
+		
+	.main-banner-slider__slide
+		h1
+			font-size: 24px
+			&::after
+				width: 75px
+	
+	.why-we__text-block
+		width: 100%
+		text-align: center
+		
+	.why-we-slide
+		text-align: center
+		
+	.slide-img
+		justify-content: center
+		
+	.slider-arrows_why
+		display: flex
+		justify-content: center
+		.slider-count
+			color: #fff
+			
+	h2
+		font-size: 24px
+		text-align: center
+		
+	.industries-item
+		width: 100%
+		
+	.common-section
+		padding-top: 30px
+		
+	.industries-wrap
+		margin-top: 30px
+		
+	.projects-slide__left, .projects-slide__right
+		width: 100%
+		
+	.projects-slide__inner
+		flex-wrap: wrap
+		
+	.projects-slide__caption
+		padding-right: 0
+		padding-top: 40px
+		
+	.news-wrap
+		flex-wrap: wrap
+		margin-top: 30px
+		.news-item
+			width: 100%
+			margin-bottom: 20px
+			img
+				width: 100%
+				
+	.partners-wrap
+		flex-wrap: wrap
+		img
+			margin-bottom: 20px
+			&:nth-child(n+7)
+				display: none
+				
+	#partners
+		padding: 30px 0
+		
+	#news
+		padding-bottom: 30px
+		
+	.footer-inner
+		flex-wrap: wrap
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		height: auto
+		padding-top: 30px
+		padding-bottom: 30px
+		
+	.copy
+		margin-bottom: 20px
+		
+	.footer-addr
+		display: block
+		margin-bottom: 20px
+		text-align: center
+		background-position: left 5px
+		
+	.footer-tel
+		margin-bottom: 20px
+		
+	.socials
+		margin-bottom: 20px
+		
+	.main-menu-wrap
+		&.active
+			padding-right: 0
+			
+	#head-banner
+		display: none
+		
+	.all-services-item
+		width: 100%
+		
+	.icons-block
+		.item
+			width: 100%
+			text-align: center
+			padding-right: 0
+			
+	.big-icons-block
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		padding-right: 15px
+		padding-left: 15px
+		padding-top: 30px
+		padding-bottom: 30px
+		img
+			margin-bottom: 20px
+			margin-right: 0
+			
+	#all-services, #team, #contacts, #career, #service-inner
+		padding-top: 115px
+		
+	.common-text
+		img
+			width: 100%
+			margin-bottom: 20px
+			
+	#contacts
+		h4
+			text-align: center
+		.icons-block
+			.item
+				width: 100%
+				text-align: center
+				.icon
+					margin-left: auto
+					margin-right: auto
+					justify-content: center
+	
+	.tabs__caption
+		flex-wrap: wrap
+		li
+			width: 100%
+		li:not(:last-child)
+			margin-right: 0
+			margin-bottom: 8px
+			
+	h4
+		text-align: center
+		
+	.form-wrap
+		padding-left: 20px
+		padding-right: 20px
+		
+	.form-col
+		width: 100%
+		margin-bottom: 10px
+		
+	.form-row
+		flex-wrap: wrap
+		margin-bottom: 0
+		justify-content: center
+		
+	.l-file
+		margin-bottom: 20px
+		
+	.f-submit
+		width: 100%
+		
+	.project-item
+		flex-wrap: wrap
+		
+	.project-img
+		margin-right: 0
+		width: 100%
+		margin-bottom: 10px
+		
+	.project-desc
+		text-align: center
+		
+	.pagination
+		ul
+			justify-content: center
+			li:last-child
+				margin-right: 0
+				
+	.servises-menu>li
+		.menu-caption>a
+			font-size: 12px
+			
+	.serv-inner-text
+		h2
+			font-size: 16px
+			text-transform: uppercase
+			
+	.project-desc
+		width: 100%
+		
+	.partners-wrap
+		justify-content: space-around
+		img:nth-child(n+5)
+			display: block
+		
+	
+@media screen and (max-width: 475px)
+	.modal
+		padding: 0
+		color: #000
